@@ -2,10 +2,12 @@ name: 1-actions-ci-cd-aks
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
     paths: .github/workflows/1-actions-ci-cd-aks.yml
   pull_request:
-    branches:  none # [ main ]
+    branches: 
+      - main
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -14,7 +16,7 @@ jobs:
   build-deploy-aks:
     runs-on: ubuntu-latest
     env:
-      DOCKER_REPOSITORY: houssemdocker # name of Docker Hub ID
+      DOCKER_REPOSITORY: vkpatilhsit # name of Docker Hub ID
       IMAGE_NAME: webapp
       IMAGE_TAG: ${{ github.run_number }} # $GITHUB_RUN_NUMBER
       
