@@ -12,7 +12,7 @@ spec:
       labels:
         app: mvc
     spec:
-      imagePullSecret:
+      imagePullSecrets:
       - name: privateregcred
       containers:
       - name: mvc
