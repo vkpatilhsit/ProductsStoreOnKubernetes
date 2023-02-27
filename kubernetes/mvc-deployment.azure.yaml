@@ -12,6 +12,8 @@ spec:
       labels:
         app: mvc
     spec:
+      imagePullSecret:
+      - name: privateregcred
       containers:
       - name: mvc
         # image: demoaks0acr.azurecr.io/web-app:1.3
