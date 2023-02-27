@@ -28,3 +28,21 @@ jobs:
 
       - name: Git Checkout
         uses: actions/checkout@v2
+        
+      - name: Docker build, Clair scan, ACR push
+         # You may pin to the exact commit or the version.
+         # uses: MaciejBoguta/docker-clair-acr-action@ad36c9f1f42c147161ff129352a9f04706d07483
+        uses: MaciejBoguta/docker-clair-acr-action@v0.2.0
+        with:
+          # Container repository and image name
+          image-name: dotnetmicro/dotnetwebapp
+          # Image tag, defaults to latest
+          tag: ${{ github.run_number }} # optional, default is latest
+          # Should image be pushed to ACR
+          should-push-to-acr: "true"
+          # Azure client id for authentication to ACR
+          client-id: "88c90c90-6ecc-47b5-8b79-973288dbe40b"
+          # Azure client secret for authentication to ACR
+          client-secret: "82n8Q~txQpNc0NdZ6QqbImoPOGT23M1eMzl5la_n"
+          # ACR instance name
+          acr-name: ramucontainerregistry.azurecr.io
