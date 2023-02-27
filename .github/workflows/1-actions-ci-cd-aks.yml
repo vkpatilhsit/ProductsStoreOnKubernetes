@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPOSITORY: ramgouda # name of Docker Hub ID
-      IMAGE_NAME: webapp
+      IMAGE_NAME: myprivaterepo
       IMAGE_TAG: ${{ github.run_number }} # $GITHUB_RUN_NUMBER
       
       CLUSTER_NAME: eshop-learn-aks
