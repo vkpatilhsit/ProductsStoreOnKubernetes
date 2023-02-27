@@ -4,7 +4,7 @@ on:
   push:
     branches: 
       - main
-    paths: .github/workflows/acr-aks-.yaml
+    paths: .github/workflows/1-actions-ci-cd-acr-aks.yml
   pull_request:
     branches: 
       - main
