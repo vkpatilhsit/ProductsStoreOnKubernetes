@@ -62,6 +62,7 @@ jobs:
   Deploy-to-Dev-Env:
     needs: build_Push-DOcker-Image
     runs-on: ubuntu-latest
+    environment: Development
     env:
             
       CLUSTER_NAME: eshop-learn-aks
