@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  build:
+  build_Push-DOcker-Image:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPOSITORY: ramgouda # name of Docker Hub ID
@@ -60,7 +60,7 @@ jobs:
         IMAGE_TAG: ${{ env.IMAGE_TAG }}
 
   Deploy-to-Dev-Env:
-    needs: build
+    needs: build_Push-DOcker-Image
     runs-on: ubuntu-latest
     env:
             
@@ -91,8 +91,8 @@ jobs:
         sleep 30s
         kubectl logs job.batch/kube-bench
         kubectl delete job.batch/kube-bench
-Deploy-to-QA-Env:
-    needs: build
+  Deploy-to-QA-Env:
+    needs: Deploy-to-Dev-Env
     runs-on: ubuntu-latest
     env:
             
