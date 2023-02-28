@@ -95,6 +95,7 @@ jobs:
   Deploy-to-QA-Env:
     needs: Deploy-to-Dev-Env
     runs-on: ubuntu-latest
+    environment: QA
     env:
             
       CLUSTER_NAME: eshop-learn-aks
@@ -127,6 +128,7 @@ jobs:
   Deploy-to-Prod-Env:
     needs: Deploy-to-QA-Env
     runs-on: ubuntu-latest
+    environment: Production
     env:
             
       CLUSTER_NAME: eshop-learn-aks
