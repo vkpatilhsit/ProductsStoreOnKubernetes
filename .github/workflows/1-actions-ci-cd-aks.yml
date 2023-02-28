@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  build-deploy-aks:
+  build:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPOSITORY: ramgouda # name of Docker Hub ID
@@ -58,7 +58,12 @@ jobs:
         DOCKER_REPOSITORY: ${{ env.DOCKER_REPOSITORY }}
         IMAGE_NAME: ${{ env.IMAGE_NAME }}
         IMAGE_TAG: ${{ env.IMAGE_TAG }}
-        
+
+  Release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
     # Set the target AKS cluster.
     - uses: Azure/aks-set-context@v1
       with:
