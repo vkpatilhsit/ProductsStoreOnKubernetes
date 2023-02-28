@@ -82,6 +82,7 @@ jobs:
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f kubernetes/mvc-deployment.azure.yaml
+        kubectl apply -f kubernetes/mssql-deployment.yaml
     
     - name: Run Kube-Bench to check cluster config
       continue-on-error: true
