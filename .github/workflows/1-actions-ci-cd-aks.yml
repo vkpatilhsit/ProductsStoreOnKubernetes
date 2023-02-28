@@ -68,6 +68,10 @@ jobs:
       RESOURSE_GROUP: eshop-learn-rg
 
     steps:
+    
+    - name: Git Checkout
+      uses: actions/checkout@v2
+      
     # Set the target AKS cluster.
     - uses: Azure/aks-set-context@v1
       with:
