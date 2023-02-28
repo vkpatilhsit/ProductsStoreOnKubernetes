@@ -64,7 +64,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: Development
     env:
-            
       CLUSTER_NAME: eshop-learn-aks
       RESOURSE_GROUP: eshop-learn-rg
 
@@ -98,7 +97,7 @@ jobs:
     environment: QA
     env:
             
-      CLUSTER_NAME: eshop-learn-aks
+      CLUSTER_NAME: eshop-learn-aks-QA
       RESOURSE_GROUP: eshop-learn-rg
 
     steps:
