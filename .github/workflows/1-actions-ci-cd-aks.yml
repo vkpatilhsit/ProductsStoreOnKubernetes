@@ -59,9 +59,13 @@ jobs:
         IMAGE_NAME: ${{ env.IMAGE_NAME }}
         IMAGE_TAG: ${{ env.IMAGE_TAG }}
 
-  Release:
+  Deploy-to-Dev-Env:
     needs: build
     runs-on: ubuntu-latest
+    env:
+            
+      CLUSTER_NAME: eshop-learn-aks
+      RESOURSE_GROUP: eshop-learn-rg
 
     steps:
     # Set the target AKS cluster.
