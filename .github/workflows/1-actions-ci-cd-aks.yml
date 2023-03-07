@@ -121,6 +121,10 @@ jobs:
       run: |
         kubectl apply -f kubernetes/mvc-deployment.azure.yaml
         kubectl apply -f kubernetes/mssql-deployment.yaml
+        kubectl apply -f kubernetes/mssql-configmap.yaml
+        kubectl apply -f kubernetes/mssql-pv.azure.yaml
+        kubectl apply -f kubernetes/mssql-secret.yaml
+        kubectl create secret docker-registry privateregcred --docker-server=https://index.docker.io/v1/ --docker-username=ramgouda --docker-password=passw0rd1
     
     - name: Run Kube-Bench to check cluster config
       continue-on-error: true
@@ -154,6 +158,10 @@ jobs:
       run: |
         kubectl apply -f kubernetes/mvc-deployment.azure.yaml
         kubectl apply -f kubernetes/mssql-deployment.yaml
+        kubectl apply -f kubernetes/mssql-configmap.yaml
+        kubectl apply -f kubernetes/mssql-pv.azure.yaml
+        kubectl apply -f kubernetes/mssql-secret.yaml
+        kubectl create secret docker-registry privateregcred --docker-server=https://index.docker.io/v1/ --docker-username=ramgouda --docker-password=passw0rd1
     
     - name: Run Kube-Bench to check cluster config
       continue-on-error: true
