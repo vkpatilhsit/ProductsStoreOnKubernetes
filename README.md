@@ -1,3 +1,4 @@
+[![self-hosted-runner](https://github.com/vkpatilhsit/ProductsStoreOnKubernetes/actions/workflows/self-hosted-runner.yml/badge.svg)](https://github.com/vkpatilhsit/ProductsStoreOnKubernetes/actions/workflows/self-hosted-runner.yml)
 ![Docker Image CI](https://github.com/HoussemDellai/ProductsStoreOnKubernetes/workflows/Docker%20Image%20CI/badge.svg)
 
 # ProductsStore on Kubernetes
